@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RadioAgro</string>
+    <string name="escriba_su_nombre">Escriba su nombre</string>
+    <string name="escriba_su_correo">Escriba su correo</string>
+    <string name="escriba_su_contrase_a">Escriba su contraseña</string>
+    <string name="registrar">Registrar</string>
 </resources>
