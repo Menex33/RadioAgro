@@ -14,6 +14,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:text="Nombre"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,36 +23,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rv_emisoras"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/bt_radio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nombre_usuario" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_favoritos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="673dp" />
+        android:layout_marginBottom="10dp"
+        android:text="Favoritos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt_radio"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bt_radio"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="Button"
+        android:layout_marginBottom="10dp"
+        android:text="Radio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        tools:layout_editor_absoluteY="673dp" />
+        app:layout_constraintStart_toEndOf="@+id/bt_favoritos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
