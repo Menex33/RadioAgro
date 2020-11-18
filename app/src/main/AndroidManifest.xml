@@ -11,15 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RadioAgro">
-        <activity android:name=".RegistarUsuarioActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".view.ui.FavoritosActivity"></activity>
+        <activity android:name=".view.ui.RadioActivity" />
+        <activity android:name=".view.ui.RegistarUsuarioActivity" />
+        <activity android:name=".view.ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

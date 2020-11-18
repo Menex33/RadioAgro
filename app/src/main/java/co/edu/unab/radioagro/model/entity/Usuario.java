@@ -1,4 +1,4 @@
-package co.edu.unab.radioagro;
+package co.edu.unab.radioagro.model.entity;
 
 
 import androidx.room.ColumnInfo;

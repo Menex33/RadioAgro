@@ -1,6 +1,5 @@
-package co.edu.unab.radioagro;
+package co.edu.unab.radioagro.view.adapter;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,10 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class EmisoraAdapter extends RecyclerView.Adapter<EmisoraAdapter.EmisoraViewHolde> {
+import co.edu.unab.radioagro.model.entity.Emisora;
+import co.edu.unab.radioagro.R;
+
+public class EmisoraAdapter extends RecyclerView.Adapter<EmisoraAdapter.EmisoraViewHolder> implements View.OnClickListener {
 
     ArrayList<Emisora> emisoras;
     OnItemClickListener onItemClickListener;
@@ -34,13 +36,13 @@ public class EmisoraAdapter extends RecyclerView.Adapter<EmisoraAdapter.EmisoraV
 
     @NonNull
     @Override
-    public EmisoraViewHolde onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public EmisoraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.emisora_item, parent, false);
-        return new EmisoraViewHolde(view);
+        return new EmisoraViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EmisoraViewHolde holder, int position) {
+    public void onBindViewHolder(@NonNull EmisoraViewHolder holder, int position) {
         holder.onBind(emisoras.get(position));
     }
 
@@ -49,28 +51,32 @@ public class EmisoraAdapter extends RecyclerView.Adapter<EmisoraAdapter.EmisoraV
         return emisoras.size();
     }
 
-    public class EmisoraViewHolde extends RecyclerView.ViewHolder {
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    public class EmisoraViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivEmisora;
         TextView tvNombre;
         TextView tvDescripcion;
 
-        public EmisoraViewHolde(@NonNull View itemView) {
+        public EmisoraViewHolder(@NonNull View itemView) {
             super(itemView);
 
             ivEmisora = itemView.findViewById(R.id.iv_emisora);
-            tvNombre = itemView.findViewById(R.id.tv_nombre_e);
-            tvDescripcion = itemView.findViewById(R.id.tv_descripcion_e);
+            tvNombre = itemView.findViewById(R.id.tv_nombre);
+            tvDescripcion = itemView.findViewById(R.id.tv_descripcion);
 
         }
 
-
         public void onBind(Emisora emisora){
+
             tvNombre.setText(emisora.getNombreEmisora());
             tvDescripcion.setText(emisora.getDescripcionEmisora());
 
             Glide.with(itemView.getContext()).load(emisora.getImagenEmisora()).into(ivEmisora);
-
 
             if (onItemClickListener!=null){
                 itemView.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +86,6 @@ public class EmisoraAdapter extends RecyclerView.Adapter<EmisoraAdapter.EmisoraV
                     }
                 });
             }
-
         }
     }
 

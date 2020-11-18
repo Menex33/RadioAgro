@@ -1,13 +1,17 @@
-package co.edu.unab.radioagro;
+package co.edu.unab.radioagro.view.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import co.edu.unab.radioagro.R;
+import co.edu.unab.radioagro.model.entity.Usuario;
+import co.edu.unab.radioagro.model.local.UsuarioBD;
+import co.edu.unab.radioagro.model.local.UsuarioDAO;
 
 public class RegistarUsuarioActivity extends AppCompatActivity {
 

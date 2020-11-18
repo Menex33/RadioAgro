@@ -1,4 +1,4 @@
-package co.edu.unab.radioagro;
+package co.edu.unab.radioagro.view.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import co.edu.unab.radioagro.R;
+import co.edu.unab.radioagro.model.entity.Usuario;
+import co.edu.unab.radioagro.model.local.UsuarioBD;
+import co.edu.unab.radioagro.model.local.UsuarioDAO;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            Usuario usuario = usuarioDAO.iniciarSasion(miCorreo, miPassword);
+                            Usuario usuario = usuarioDAO.iniciarSesion(miCorreo, miPassword);
                             if (usuario==null){
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -47,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 });
                             }else {
-                                String nombre = usuario.nombre;
+                                String nombre = usuario.getNombre();
                                 startActivity(new Intent(
                                         LoginActivity.this, MainActivity.class)
                                         .putExtra("nombre", nombre));
